@@ -401,7 +401,7 @@ section { position: relative; z-index: 1; }
 .hero-visual {
   position: relative;
   opacity: 0;
-  animation: fadeIn 1s ease forwards 2.4s;
+  animation: fadeIn 2s ease forwards 2.4s;
 }
 
 /* Floating terminal window */
@@ -885,6 +885,10 @@ footer .highlight { color: var(--accent2); }
 
 
 /* For mobile custom Touch Finger */
+
+
+/* Your existing CSS above */
+
 .tap-effect {
   position: fixed;
   width: 20px;
@@ -897,11 +901,11 @@ footer .highlight { color: var(--accent2); }
   z-index: 9999;
 }
 
+/* ADD THIS AT BOTTOM */
 @keyframes tapAnim {
-  from { transform: translate(-50%, -50%) scale(1); opacity: 1; }
-  to { transform: translate(-50%, -50%) scale(3); opacity: 0; }
+  0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(3); opacity: 0; }
 }
-
 
 
 </style>
@@ -988,7 +992,7 @@ footer .highlight { color: var(--accent2); }
       <div class="hero-visual">
         <div class="float-card card-tl">
           <div class="fc-label">Projects Built</div>
-          <div class="fc-val purple">5+</div>
+          <div class="fc-val purple">8+</div>
         </div>
         <div class="terminal tilt" id="terminalCard">
           <div class="terminal-bar">
@@ -1406,5 +1410,25 @@ document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta').forEach(btn 
   });
 });
 </script>
+
+<script>
+if (window.innerWidth <= 768) {
+  document.addEventListener("touchstart", function(e) {
+    const touch = e.touches[0];
+    
+    const div = document.createElement("div");
+    div.className = "tap-effect";
+    
+    div.style.left = touch.clientX + "px";
+    div.style.top = touch.clientY + "px";
+    
+    document.body.appendChild(div);
+
+    setTimeout(() => div.remove(), 400);
+  });
+}
+</script>
+
+
 </body>
 </html>
