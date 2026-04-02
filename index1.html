@@ -896,12 +896,26 @@ footer .highlight { color: var(--accent2); }
   background: rgba(167,139,250,0.4);
   border-radius: 50%;
   pointer-events: none;
+  transform: translate3d(-50%, -50%, 0); /* GPU */
+  transition: transform 0.05s linear;
+  z-index: 9999;
+  will-change: transform;
+}
+
+
+/*.tap-effect {
+  position: fixed;
+  width: 24px;
+  height: 24px;
+  background: rgba(167,139,250,0.4);
+  border-radius: 50%;
+  pointer-events: none;
   transform: translate(-50%, -50%);
   transition: transform 0.08s linear;
   z-index: 9999;
   box-shadow: 0 0 20px rgba(167,139,250,0.5);
 
-}
+}*/
 
 /* ADD THIS AT BOTTOM */
 @keyframes tapAnim {
@@ -1425,8 +1439,8 @@ if (window.innerWidth <= 768) {
     touchCircle.className = "tap-effect";
     document.body.appendChild(touchCircle);
 
-    touchCircle.style.left = touch.clientX + "px";
-    touchCircle.style.top = touch.clientY + "px";
+    touchCircle.style.transform =
+      `translate3d(${touch.clientX}px, ${touch.clientY}px, 0)`;
   });
 
   document.addEventListener("touchmove", function(e) {
@@ -1434,8 +1448,8 @@ if (window.innerWidth <= 768) {
 
     const touch = e.touches[0];
 
-    touchCircle.style.left = touch.clientX + "px";
-    touchCircle.style.top = touch.clientY + "px";
+    touchCircle.style.transform =
+      `translate3d(${touch.clientX}px, ${touch.clientY}px, 0)`;
   });
 
   document.addEventListener("touchend", function() {
@@ -1447,7 +1461,6 @@ if (window.innerWidth <= 768) {
 
 }
 </script>
-
 
 </body>
 </html>
