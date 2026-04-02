@@ -891,13 +891,13 @@ footer .highlight { color: var(--accent2); }
 
 .tap-effect {
   position: fixed;
-  width: 20px;
-  height: 20px;
-  background: rgba(167,139,250,0.5);
+  width: 24px;
+  height: 24px;
+  background: rgba(167,139,250,0.4);
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  animation: tapAnim 0.4s ease-out;
+  transition: transform 0.08s linear;
   z-index: 9999;
 }
 
@@ -1412,20 +1412,37 @@ document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta').forEach(btn 
 </script>
 
 <script>
+let touchCircle = null;
+
 if (window.innerWidth <= 768) {
+
   document.addEventListener("touchstart", function(e) {
     const touch = e.touches[0];
-    
-    const div = document.createElement("div");
-    div.className = "tap-effect";
-    
-    div.style.left = touch.clientX + "px";
-    div.style.top = touch.clientY + "px";
-    
-    document.body.appendChild(div);
 
-    setTimeout(() => div.remove(), 400);
+    touchCircle = document.createElement("div");
+    touchCircle.className = "tap-effect";
+    document.body.appendChild(touchCircle);
+
+    touchCircle.style.left = touch.clientX + "px";
+    touchCircle.style.top = touch.clientY + "px";
   });
+
+  document.addEventListener("touchmove", function(e) {
+    if (!touchCircle) return;
+
+    const touch = e.touches[0];
+
+    touchCircle.style.left = touch.clientX + "px";
+    touchCircle.style.top = touch.clientY + "px";
+  });
+
+  document.addEventListener("touchend", function() {
+    if (touchCircle) {
+      touchCircle.remove();
+      touchCircle = null;
+    }
+  });
+
 }
 </script>
 
