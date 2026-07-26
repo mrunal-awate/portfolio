@@ -1546,6 +1546,23 @@
         box-shadow: 0 8px 30px rgba(124, 106, 247, 0.4);
       }
 
+      .form-status {
+        margin-top: 18px;
+        font-size: 0.92rem;
+        font-weight: 500;
+        display: none;
+        line-height: 1.7;
+      }
+
+      .form-submit:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+
+      .form-label span {
+        color: #ef4444;
+      }
+
       /* ─── FOOTER ─── */
       footer {
         background: var(--bg2);
@@ -2812,87 +2829,155 @@
       </div>
     </section> -->
 
+    <!-- ─── CONTACT ─── -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label">Let's Connect</div>
+          <h2 class="section-title">Get In Touch</h2>
+        </div>
 
-    <!-- Contact Form -->
-<form
-  class="contact-form"
-  action="https://formspree.io/f/mnjeokkl"
-  method="POST"
->
+        <div class="contact-wrap reveal">
+          <!-- LEFT SIDE -->
+          <div>
+            <p
+              style="
+                color: var(--muted);
+                font-size: 0.95rem;
+                font-weight: 300;
+                line-height: 1.8;
+                margin-bottom: 2rem;
+              "
+            >
+              I'm actively seeking full-time opportunities as a Frontend or MERN
+              Stack Developer. Whether you have a job opportunity, a freelance
+              project, or simply want to connect, I'd love to hear from you.
+            </p>
 
-  <!-- Email Subject -->
-  <input
-    type="hidden"
-    name="_subject"
-    value="📩 New Portfolio Contact from mrunalawate.online"
-  />
+            <div class="contact-info-row">
+              <div class="contact-icon-box">✉️</div>
+              <div>
+                <div class="contact-label">Email</div>
+                <div class="contact-val">
+                  <a href="mailto:mrunal0awate@gmail.com">
+                    mrunal0awate@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
 
-  <!-- Redirect After Success -->
-  <!-- Replace with your actual portfolio URL -->
-  <!-- <input type="hidden" name="_next" value="https://mrunalawate.online/"> -->
+            <div class="contact-info-row">
+              <div class="contact-icon-box">💼</div>
+              <div>
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-val">
+                  <a
+                    href="https://www.linkedin.com/in/mrunal-awate-00a90225b/"
+                    target="_blank"
+                  >
+                    linkedin.com/in/mrunal-awate
+                  </a>
+                </div>
+              </div>
+            </div>
 
-  <div class="form-group">
-    <label class="form-label">Full Name <span>*</span></label>
-    <input
-      type="text"
-      name="name"
-      class="form-input"
-      placeholder="John Doe"
-      required
-    />
-  </div>
+            <div class="contact-info-row">
+              <div class="contact-icon-box">🐙</div>
+              <div>
+                <div class="contact-label">GitHub</div>
+                <div class="contact-val">
+                  <a href="https://github.com/mrunal-awate" target="_blank">
+                    github.com/mrunal-awate
+                  </a>
+                </div>
+              </div>
+            </div>
 
-  <div class="form-group">
-    <label class="form-label">Email Address <span>*</span></label>
-    <input
-      type="email"
-      name="email"
-      class="form-input"
-      placeholder="john@example.com"
-      required
-    />
-  </div>
+            <div class="contact-info-row">
+              <div class="contact-icon-box">📍</div>
+              <div>
+                <div class="contact-label">Location</div>
+                <div class="contact-val">Thane, Maharashtra, India</div>
+              </div>
+            </div>
+          </div>
 
-  <div class="form-group">
-    <label class="form-label">Company / Organization</label>
-    <input
-      type="text"
-      name="company"
-      class="form-input"
-      placeholder="Google, Microsoft, TCS..."
-    />
-  </div>
+          <!-- RIGHT SIDE -->
+          <form id="contactForm" class="contact-form">
+            <input
+              type="hidden"
+              name="_subject"
+              value="📩 New Portfolio Contact"
+            />
 
-  <div class="form-group">
-    <label class="form-label">Subject <span>*</span></label>
-    <input
-      type="text"
-      name="subject"
-      class="form-input"
-      placeholder="Job Opportunity / Freelance Project"
-      required
-    />
-  </div>
+            <div class="form-group">
+              <label class="form-label"> Full Name * </label>
 
-  <div class="form-group">
-    <label class="form-label">Message <span>*</span></label>
-    <textarea
-      name="message"
-      class="form-textarea"
-      rows="6"
-      placeholder="Hi Mrunal, I'd like to discuss an opportunity..."
-      required
-    ></textarea>
-  </div>
+              <input
+                class="form-input"
+                type="text"
+                name="name"
+                placeholder="John Doe"
+                required
+              />
+            </div>
 
-  <button type="submit" class="form-submit">
-    Send Message →
-  </button>
+            <div class="form-group">
+              <label class="form-label"> Email Address * </label>
 
-</form>
+              <input
+                class="form-input"
+                type="email"
+                name="email"
+                placeholder="john@example.com"
+                required
+              />
+            </div>
 
+            <div class="form-group">
+              <label class="form-label"> Company / Organization </label>
 
+              <input
+                class="form-input"
+                type="text"
+                name="company"
+                placeholder="Google, Microsoft, Infosys..."
+              />
+            </div>
 
+            <div class="form-group">
+              <label class="form-label"> Subject * </label>
+
+              <input
+                class="form-input"
+                type="text"
+                name="subject"
+                placeholder="Job Opportunity"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label"> Message * </label>
+
+              <textarea
+                class="form-textarea"
+                name="message"
+                rows="6"
+                placeholder="Hi Mrunal, I'd like to discuss an opportunity..."
+                required
+              ></textarea>
+            </div>
+
+            <button id="submitBtn" class="form-submit" type="submit">
+              Send Message →
+            </button>
+
+            <div id="formStatus" class="form-status"></div>
+          </form>
+        </div>
+      </div>
+    </section>
 
     <!-- ─── FOOTER ─── -->
     <footer>
@@ -3100,6 +3185,51 @@
           }
         });
       }
+    </script>
+
+    <script>
+      const form = document.getElementById("contactForm");
+      const submitBtn = document.getElementById("submitBtn");
+      const status = document.getElementById("formStatus");
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = "Sending...";
+
+        status.style.display = "none";
+
+        const data = new FormData(form);
+
+        try {
+          const response = await fetch("https://formspree.io/f/mnjeokkl", {
+            method: "POST",
+            body: data,
+            headers: {
+              Accept: "application/json",
+            },
+          });
+
+          if (response.ok) {
+            form.reset();
+
+            status.style.display = "block";
+            status.style.color = "#22c55e";
+            status.innerHTML =
+              "✅ Thank you! Your message has been sent successfully. I'll get back to you soon.";
+          } else {
+            throw new Error();
+          }
+        } catch {
+          status.style.display = "block";
+          status.style.color = "#ef4444";
+          status.innerHTML = "❌ Something went wrong. Please try again.";
+        }
+
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = "Send Message →";
+      });
     </script>
   </body>
 </html>
