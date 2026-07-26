@@ -1215,6 +1215,69 @@
         color: var(--muted);
       }
 
+      /* Education Content */
+      .edu-content {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        width: 100%;
+      }
+
+      /* Honours Text */
+      .honours {
+        display: inline-block;
+        font-size: 0.92rem;
+        font-weight: 500;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      /* Graduated Badge */
+      .status {
+        display: inline-block;
+        padding: 3px 10px;
+        margin-left: 8px;
+        background: rgba(34, 197, 94, 0.12);
+        color: #22c55e;
+        border: 1px solid rgba(34, 197, 94, 0.25);
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      /* Spacing Between Education Cards */
+      #education .edu-card:not(:last-child) {
+        margin-bottom: 1.5rem;
+      }
+
+      /* Better Line Height */
+      .edu-detail {
+        line-height: 1.7;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .edu-card {
+          padding: 1.5rem;
+          gap: 1rem;
+        }
+
+        .edu-icon {
+          width: 48px;
+          height: 48px;
+          font-size: 1.4rem;
+        }
+
+        .edu-degree {
+          font-size: 1rem;
+        }
+
+        .edu-college,
+        .edu-detail {
+          font-size: 0.8rem;
+        }
+      }
+
       /* ─── CERTIFICATIONS ─── */
       #certifications {
         padding: 7rem 0;
@@ -2299,101 +2362,79 @@
         </div>
       </div>
     </section> -->
-    
+
     <!-- ─── EDUCATION ─── -->
-<section id="education">
-  <div class="container">
-
-    <div class="section-head reveal">
-      <div class="section-label">Academic Background</div>
-      <h2 class="section-title">Education</h2>
-    </div>
-
-    <!-- B.E. -->
-    <div class="edu-card reveal">
-      <div class="edu-icon">🎓</div>
-      <div class="edu-content">
-        <div class="edu-degree">
-          Bachelor of Engineering (B.E.) – Computer Engineering
-          <br>
-          <span class="honours">(Honours in Cyber Security)</span>
+    <section id="education">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label">Academic Background</div>
+          <h2 class="section-title">Education</h2>
         </div>
 
-        <div class="edu-college">
-          Sinhgad Institute of Technology and Science, Pune
+        <!-- B.E. -->
+        <div class="edu-card reveal">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-content">
+            <div class="edu-degree">
+              Bachelor of Engineering (B.E.) – Computer Engineering
+              <br />
+              <span class="honours">(Honours in Cyber Security)</span>
+            </div>
+
+            <div class="edu-college">
+              Sinhgad Institute of Technology and Science, Pune
+            </div>
+
+            <div class="edu-detail">
+              Savitribai Phule Pune University (SPPU)
+            </div>
+
+            <div class="edu-detail"><strong>CGPA:</strong> 8.76 / 10</div>
+
+            <div class="edu-detail">
+              <strong>Duration:</strong> 2022 – 2026 &nbsp; | &nbsp;
+              <span class="status">Graduated</span>
+            </div>
+          </div>
         </div>
 
-        <div class="edu-detail">
-          Savitribai Phule Pune University (SPPU)
+        <!-- HSC -->
+        <div class="edu-card reveal">
+          <div class="edu-icon">📘</div>
+          <div class="edu-content">
+            <div class="edu-degree">Higher Secondary Certificate (HSC)</div>
+
+            <div class="edu-college">
+              <!-- Your College Name -->
+            </div>
+
+            <div class="edu-detail">Maharashtra State Board</div>
+
+            <div class="edu-detail"><strong>Percentage:</strong> XX.XX%</div>
+
+            <div class="edu-detail"><strong>Year:</strong> 2022</div>
+          </div>
         </div>
 
-        <div class="edu-detail">
-          <strong>CGPA:</strong> 8.76 / 10
-        </div>
+        <!-- SSC -->
+        <div class="edu-card reveal">
+          <div class="edu-icon">📖</div>
+          <div class="edu-content">
+            <div class="edu-degree">Secondary School Certificate (SSC)</div>
 
-        <div class="edu-detail">
-          <strong>Duration:</strong> 2022 – 2026 &nbsp; | &nbsp;
-          <span class="status">Graduated</span>
-        </div>
-      </div>
-    </div>
+            <div class="edu-college">
+              <!-- Your School Name -->
+            </div>
 
-    <!-- HSC -->
-    <div class="edu-card reveal">
-      <div class="edu-icon">📘</div>
-      <div class="edu-content">
-        <div class="edu-degree">
-          Higher Secondary Certificate (HSC)
-        </div>
+            <div class="edu-detail">Maharashtra State Board</div>
 
-        <div class="edu-college">
-          <!-- Your College Name -->
-        </div>
+            <div class="edu-detail"><strong>Percentage:</strong> XX.XX%</div>
 
-        <div class="edu-detail">
-          Maharashtra State Board
-        </div>
-
-        <div class="edu-detail">
-          <strong>Percentage:</strong> XX.XX%
-        </div>
-
-        <div class="edu-detail">
-          <strong>Year:</strong> 2022
-        </div>
-      </div>
-    </div>
-
-    <!-- SSC -->
-    <div class="edu-card reveal">
-      <div class="edu-icon">📖</div>
-      <div class="edu-content">
-        <div class="edu-degree">
-          Secondary School Certificate (SSC)
-        </div>
-
-        <div class="edu-college">
-          <!-- Your School Name -->
-        </div>
-
-        <div class="edu-detail">
-          Maharashtra State Board
-        </div>
-
-        <div class="edu-detail">
-          <strong>Percentage:</strong> XX.XX%
-        </div>
-
-        <div class="edu-detail">
-          <strong>Year:</strong> 2020
+            <div class="edu-detail"><strong>Year:</strong> 2020</div>
+          </div>
         </div>
       </div>
-    </div>
-
-  </div>
-</section>
-
-
+    </section>
 
     <!-- ─── CERTIFICATIONS ─── -->
     <section id="certifications">
